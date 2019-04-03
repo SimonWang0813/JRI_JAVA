@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!-- action name="对应index.jsp表单中的action name"  class="为相应的类路径" -->
+<package name="StaffManagement" namespace="/" extends="struts-default">      
+        <action name="loginaction" class="com.simon.action.LoginAction" method="execute">
+        	<!-- 根据不同的结果加载不同的页面 -->
+            <result name="success">/index.html</result>  
+            <result name="error" >/error.jsp</result>
+        </action>
+        <action name="queryEmpAction" class="com.simon.action.EmployeeAction" method="add">
+        	<result name="add">/AddEmployee.jsp</result>
+        </action>
+    </package>
+</struts>
